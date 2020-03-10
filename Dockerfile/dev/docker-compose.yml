@@ -4,14 +4,15 @@ services:
     build:
       context: ./
       dockerfile: dev.Dockerfile
+    image: ubuntu-dev:18.04
     restart: always
     expose:
       - "22"
     ports:
-      - "22:8022"
+      - "8022:22"
     volumes:
-      - ~/Shin:/shin
-      - ~/PycharmProjects:/project
-      - ~/Workspace:/workspace
+      - ~/Shin:/root/shin
+      - ~/PycharmProjects:/root/project
+      - ~/Workspace:/root/workspace
     stdin_open: true
     tty: true
