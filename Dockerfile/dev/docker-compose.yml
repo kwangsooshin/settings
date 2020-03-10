@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  develop:
+    build:
+      context: ./
+      dockerfile: dev.Dockerfile
+    restart: always
+    expose:
+      - "22"
+    ports:
+      - "22:8022"
+    volumes:
+      - ~/Shin:/shin
+      - ~/PycharmProjects:/project
+      - ~/Workspace:/workspace
+    stdin_open: true
+    tty: true
