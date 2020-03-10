@@ -1,5 +1,10 @@
 FROM ubuntu:18.04
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        software-properties-common apt-utils wget \
+        build-essential python3.7 python3.7-dev python3-pip python3.7-venv
+
 ##################################################
 RUN sed -i "s/archive.ubuntu.com/mirror.kakao.com/g" /etc/apt/sources.list && \
     apt-get update && apt-get upgrade -y && \
