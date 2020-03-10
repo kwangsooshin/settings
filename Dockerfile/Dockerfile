@@ -1,3 +1,5 @@
+FROM ubuntu:18.04
+
 ##################################################
 RUN sed -i "s/archive.ubuntu.com/mirror.kakao.com/g" /etc/apt/sources.list && \
     apt-get update && apt-get upgrade -y && \
@@ -17,7 +19,7 @@ RUN printenv > ~/.pam_environment
 
 EXPOSE 22 8000
 
-ADD ksshin.dev.entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
 ##################################################
