@@ -5,8 +5,9 @@ ENV PYTHON_VERSION 3.7
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         software-properties-common apt-utils wget curl build-essential \
-        python$PYTHON_VERSION python$PYTHON_VERSION-dev python$PYTHON_VERSION-venv python$PYTHON_MAJOR_VERISON-pip
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python$PYTHON_VERSION get-pip.py && rm get-pip.py
+        python$PYTHON_VERSION python$PYTHON_VERSION-distutils
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python$PYTHON_VERSION get-pip.py && rm get-pip.py
 RUN ln -s /usr/bin/python$PYTHON_VERSION /usr/bin/python && \
     ln -s /usr/bin/pip$PYTHON_VERSION /usr/bin/pip
 
