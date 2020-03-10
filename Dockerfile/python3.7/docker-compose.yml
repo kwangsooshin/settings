@@ -3,13 +3,13 @@ services:
   develop:
     build:
       context: ./
-      dockerfile: dev.Dockerfile
-    image: ubuntu-dev:18.04
+      dockerfile: Dockerfile
+    image: ubuntu:18.04-python3.7
     restart: always
     expose:
       - "22"
     ports:
-      - "8022:22"
+      - "8037:22"
     volumes:
       - ~/Shin:/root/shin
       - ~/PycharmProjects:/root/project

@@ -30,7 +30,7 @@ RUN printenv > ~/.pam_environment
 
 EXPOSE 22 8000
 
-ADD dev.entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
 ##################################################
