@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  develop:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ubuntu:18.04-python3.6
+    restart: always
+    expose:
+      - "22"
+    ports:
+      - "8037:22"
+    volumes:
+      - ~/Shin:/root/shin
+      - ~/PycharmProjects:/root/project
+      - ~/Workspace:/root/workspace
+    stdin_open: true
+    tty: true
