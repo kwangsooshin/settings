@@ -9,7 +9,7 @@ services:
     expose:
       - "22"
     ports:
-      - "8037:22"
+      - "8036:22"
     volumes:
       - ~/Shin:/root/shin
       - ~/PycharmProjects:/root/project
